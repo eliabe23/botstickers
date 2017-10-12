@@ -49,8 +49,7 @@ shameless = ('shameless', 'shameless us')
 sons = ('sons', 'soa', 'sons of anarchy', 'sonsofanarchy')
 seriecadastradas = ('nome da serie')
 
-def lendo():
-    telegram.message_loop(recebendoMsg)
+
 
 def recebendoMsg(msg):
     frase = msg['text']
@@ -152,9 +151,13 @@ def recebendoMsg(msg):
             resp = 'não entendi'
         telegram.sendSticker(chatID,resp)
 
-if __name__ == '__main__':
+
+if __name__ == '__main__':  
     try:
-        lendo()
+        telegram.message_loop(recebendoMsg)
+        print="teste"
     except KeyboardInterrupt:
         exit()
+
+
 
