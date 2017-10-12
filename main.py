@@ -48,11 +48,12 @@ shameless = ('shameless', 'shameless us')
 sons = ('sons', 'soa', 'sons of anarchy', 'sonsofanarchy')
 seriecadastradas = ('nome da serie')
 
+
 def recebendoMsg(msg):
     frase = msg['text']
     frase = frase.lower()
     tipoMsg, tipoChat, chatID = telepot.glance(msg)
-
+    print("foi")
     if '/play ' in frase:
         nomedaserie = frase[6:]
         if nomedaserie in sons:
@@ -150,7 +151,4 @@ def recebendoMsg(msg):
         telegram.sendSticker(chatID,resp)
       
 telegram.message_loop(recebendoMsg)
-
-while True:
-    pass
 
