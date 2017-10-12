@@ -1,4 +1,5 @@
 import telepot
+import time
 
 telegram = telepot.Bot("262863240:AAHreV8hDp_EYAbbmGpcrPCP8_2VJ6HPJtc")
 
@@ -53,7 +54,6 @@ def recebendoMsg(msg):
     frase = msg['text']
     frase = frase.lower()
     tipoMsg, tipoChat, chatID = telepot.glance(msg)
-    print("foi")
     if '/play ' in frase:
         nomedaserie = frase[6:]
         if nomedaserie in sons:
@@ -152,3 +152,5 @@ def recebendoMsg(msg):
       
 telegram.message_loop(recebendoMsg)
 
+while True:
+    time.sleep(5)
