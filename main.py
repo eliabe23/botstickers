@@ -151,13 +151,7 @@ def recebendoMsg(msg):
             resp = 'não entendi'
         telegram.sendSticker(chatID,resp)
 
-
-if __name__ == '__main__':  
-    try:
-        telegram.message_loop(recebendoMsg)
-        print="teste"
-    except KeyboardInterrupt:
-        exit()
+telegram.message_loop(recebendoMsg)
 
 
 
