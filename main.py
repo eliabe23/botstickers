@@ -32,7 +32,7 @@ class BotHandler:
         if len(get_result) > 0:
             last_update = get_result[-1]
         else:
-            last_update = get_result[len(get_result)]
+            last_update = 'nada'
 
         return last_update
 
@@ -92,101 +92,105 @@ def main():
 
         last_update = greet_bot.get_last_update()
 
-        last_update_id = last_update['update_id']
-        last_chat_text = last_update['message']['text']
-        last_chat_id = last_update['message']['chat']['id']
-        last_chat_name = last_update['message']['chat']['first_name']
-        
-        if '/play ' in last_chat_text:
-            nomedaserie = last_chat_text.lower()[6:]
-            if nomedaserie in sons:
-                greet_bot.send_sticker(last_chat_id, 'playsonsofanarchy')
-            elif nomedaserie in twobrokegirls:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADOgsAAuZdXQGb1rpQJ2A4YwI')
-            elif nomedaserie in threepercent:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD5AkAAuZdXQEay_ou6osaBgI')
-            elif nomedaserie in twelvemonkeys:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD5gkAAuZdXQHo96ZiTxLXAwI')
-            elif nomedaserie in trezerw:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD5wkAAuZdXQGdWO0ZNKK5BQI')
-            elif nomedaserie in trintatrinta:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD5wsAAuZdXQHvXn_WRjY8BAI')
-            elif nomedaserie in acasa:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD5gsAAuZdXQHeTJgcImHDRQI')
-            elif nomedaserie in americancrime:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD6AkAAuZdXQFef4X---i8NQI')
-            elif nomedaserie in americancrimestory:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD6QkAAuZdXQHYDfpMl7LuDwI')
-            elif nomedaserie in americangods:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADpAsAAuZdXQFl1_dekT6hDwI')
-            elif nomedaserie in americanhorrorstory:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD6wkAAuZdXQG5uKKXh4PNRwI')
-            elif nomedaserie in americanhousewife:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-woAAuZdXQHTrmxmJtsFfwI')
-            elif nomedaserie in angietribeca:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD_AoAAuZdXQE69ocdunlqgwI')
-            elif nomedaserie in animalkingdom:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD7gkAAuZdXQHNK3eF3G0yPwI')
-            elif nomedaserie in arrow:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD8woAAuZdXQGqz-Yu1V7oRAI')
-            elif nomedaserie in desventuras:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD7wkAAuZdXQHqL3ZpNo8e_gI')
-            elif nomedaserie in ashvsevildead:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD_QoAAuZdXQHcnL-7U1wVlgI')
-            elif nomedaserie in atlanta:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD8QkAAuZdXQHBmobJsXVqewI')
-            elif nomedaserie in atypical:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADMgwAAuZdXQHDFSAuNhnsPAI')
-            elif nomedaserie in babydaddy:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADqQsAAuZdXQGZNVBOCjuFlgI')
-            elif nomedaserie in ballers:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD8gkAAuZdXQG0h9dLoBdMpQI')
-            elif nomedaserie in banshee:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD8wkAAuZdXQE6gJ5Yc020ygI')
-            elif nomedaserie in baskets:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD9AkAAuZdXQGWouUD-hwqrwI')
-            elif nomedaserie in bettercallsaul:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD9gkAAuZdXQELmKwfo1KZ3gI')
-            elif nomedaserie in betterthings:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD9wkAAuZdXQGldCYKHx10KAI')
-            elif nomedaserie in bbus:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD9gsAAuZdXQHd5hkDZDR6vAI')	
-            elif nomedaserie in bll:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-AkAAuZdXQHJSnhWxOd5LwI')	
-            elif nomedaserie in biglove:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-goAAuZdXQFP9iCMmk8SYgI')	
-            elif nomedaserie in blackish:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADOwsAAuZdXQGur6Qz2dU1EgI')	
-            elif nomedaserie in blackmirror:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-QoAAuZdXQEQeQQVDjrtNAI')	
-            elif nomedaserie in blacksails:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-gkAAuZdXQHMK2yuCn9icwI')	
-            elif nomedaserie in blindspot:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD-wkAAuZdXQGZTbsik0eoWQI')	
-            elif nomedaserie in bloodline:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD_AkAAuZdXQFg3JFcMpUTRAI')	
-            elif nomedaserie in blooddrive:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD6AsAAuZdXQGX7hVvma5dXwI')	
-            elif nomedaserie in broadcity:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADPAsAAuZdXQGo8y_zojwOcAI')	
-            elif nomedaserie in bninenine:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAD_wkAAuZdXQFR3-68drdQdgI')	
-            elif nomedaserie in bull:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADqgsAAuZdXQGYM7ytYVi2XwI')	
-            elif nomedaserie in casual:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQAECgAC5l1dAaoQGW8BHWsvAg')	
-            elif nomedaserie in catastrophe:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADqwsAAuZdXQFE4Xo61-FIpwI')	
-            elif nomedaserie in chefstable:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADAQoAAuZdXQE8fYtoqfjTggI')	
-            elif nomedaserie in chewinggum:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADFAwAAuZdXQG-Y8YZtftjxQI')	
-            elif nomedaserie in chicagofire:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADAgoAAuZdXQGuTCw32bLxRAI')	
-            elif nomedaserie in narcos:
-                greet_bot.send_sticker(last_chat_id, 'CAADAQADRQoAAuZdXQGWXScs1RuLMAI')
-            else:
-                greet_bot.send_message(last_chat_id, 'nao entendi')
+        if last_update == 'nada':
+            print = 'travado'
+        else:
+            
+            last_update_id = last_update['update_id']
+            last_chat_text = last_update['message']['text']
+            last_chat_id = last_update['message']['chat']['id']
+            last_chat_name = last_update['message']['chat']['first_name']
+            
+            if '/play ' in last_chat_text:
+                nomedaserie = last_chat_text.lower()[6:]
+                if nomedaserie in sons:
+                    greet_bot.send_sticker(last_chat_id, 'playsonsofanarchy')
+                elif nomedaserie in twobrokegirls:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADOgsAAuZdXQGb1rpQJ2A4YwI')
+                elif nomedaserie in threepercent:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD5AkAAuZdXQEay_ou6osaBgI')
+                elif nomedaserie in twelvemonkeys:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD5gkAAuZdXQHo96ZiTxLXAwI')
+                elif nomedaserie in trezerw:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD5wkAAuZdXQGdWO0ZNKK5BQI')
+                elif nomedaserie in trintatrinta:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD5wsAAuZdXQHvXn_WRjY8BAI')
+                elif nomedaserie in acasa:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD5gsAAuZdXQHeTJgcImHDRQI')
+                elif nomedaserie in americancrime:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD6AkAAuZdXQFef4X---i8NQI')
+                elif nomedaserie in americancrimestory:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD6QkAAuZdXQHYDfpMl7LuDwI')
+                elif nomedaserie in americangods:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADpAsAAuZdXQFl1_dekT6hDwI')
+                elif nomedaserie in americanhorrorstory:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD6wkAAuZdXQG5uKKXh4PNRwI')
+                elif nomedaserie in americanhousewife:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-woAAuZdXQHTrmxmJtsFfwI')
+                elif nomedaserie in angietribeca:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD_AoAAuZdXQE69ocdunlqgwI')
+                elif nomedaserie in animalkingdom:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD7gkAAuZdXQHNK3eF3G0yPwI')
+                elif nomedaserie in arrow:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD8woAAuZdXQGqz-Yu1V7oRAI')
+                elif nomedaserie in desventuras:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD7wkAAuZdXQHqL3ZpNo8e_gI')
+                elif nomedaserie in ashvsevildead:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD_QoAAuZdXQHcnL-7U1wVlgI')
+                elif nomedaserie in atlanta:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD8QkAAuZdXQHBmobJsXVqewI')
+                elif nomedaserie in atypical:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADMgwAAuZdXQHDFSAuNhnsPAI')
+                elif nomedaserie in babydaddy:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADqQsAAuZdXQGZNVBOCjuFlgI')
+                elif nomedaserie in ballers:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD8gkAAuZdXQG0h9dLoBdMpQI')
+                elif nomedaserie in banshee:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD8wkAAuZdXQE6gJ5Yc020ygI')
+                elif nomedaserie in baskets:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD9AkAAuZdXQGWouUD-hwqrwI')
+                elif nomedaserie in bettercallsaul:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD9gkAAuZdXQELmKwfo1KZ3gI')
+                elif nomedaserie in betterthings:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD9wkAAuZdXQGldCYKHx10KAI')
+                elif nomedaserie in bbus:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD9gsAAuZdXQHd5hkDZDR6vAI')	
+                elif nomedaserie in bll:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-AkAAuZdXQHJSnhWxOd5LwI')	
+                elif nomedaserie in biglove:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-goAAuZdXQFP9iCMmk8SYgI')	
+                elif nomedaserie in blackish:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADOwsAAuZdXQGur6Qz2dU1EgI')	
+                elif nomedaserie in blackmirror:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-QoAAuZdXQEQeQQVDjrtNAI')	
+                elif nomedaserie in blacksails:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-gkAAuZdXQHMK2yuCn9icwI')	
+                elif nomedaserie in blindspot:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD-wkAAuZdXQGZTbsik0eoWQI')	
+                elif nomedaserie in bloodline:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD_AkAAuZdXQFg3JFcMpUTRAI')	
+                elif nomedaserie in blooddrive:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD6AsAAuZdXQGX7hVvma5dXwI')	
+                elif nomedaserie in broadcity:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADPAsAAuZdXQGo8y_zojwOcAI')	
+                elif nomedaserie in bninenine:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAD_wkAAuZdXQFR3-68drdQdgI')	
+                elif nomedaserie in bull:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADqgsAAuZdXQGYM7ytYVi2XwI')	
+                elif nomedaserie in casual:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQAECgAC5l1dAaoQGW8BHWsvAg')	
+                elif nomedaserie in catastrophe:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADqwsAAuZdXQFE4Xo61-FIpwI')	
+                elif nomedaserie in chefstable:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADAQoAAuZdXQE8fYtoqfjTggI')	
+                elif nomedaserie in chewinggum:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADFAwAAuZdXQG-Y8YZtftjxQI')	
+                elif nomedaserie in chicagofire:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADAgoAAuZdXQGuTCw32bLxRAI')	
+                elif nomedaserie in narcos:
+                    greet_bot.send_sticker(last_chat_id, 'CAADAQADRQoAAuZdXQGWXScs1RuLMAI')
+                else:
+                    greet_bot.send_message(last_chat_id, 'nao entendi')
         
 
         new_offset = last_update_id + 1
